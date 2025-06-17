@@ -114,13 +114,61 @@ Tüm API istekleri klasör yapısında toplandı ve export edilerek proje klasö
 * Tablolar için en az 5 veri eklenmiştir
 * `veterinary_system.sql` dosyası proje dizinindedir
 
-## 📈 Projenin Kurulumu
+API ENDPOINT TABLOSU
+🧍‍♂️ Customer (Müşteri)
+HTTP	Endpoint	Açıklama
+POST	/v1/customers	Yeni müşteri ekler
+GET	/v1/customers/getById/{id}	ID’ye göre müşteri getirir
+GET	/v1/customers?page=0&pageSize=10	Tüm müşterileri sayfalı getirir
+GET	/v1/customers/getByName/{name}	Ada göre müşteri arar
+GET	/v1/customers/{id}/animals	Müşterinin sahip olduğu hayvanları listeler
+PUT	/v1/customers	Müşteri günceller
+DELETE	/v1/customers/{id}	Müşteri siler
 
-```bash
-git clone https://github.com/kullaniciadi/veterinary-management-system.git
-cd veterinary-management-system
+🐶 Animal (Hayvan)
+HTTP	Endpoint	Açıklama
+POST	/v1/animals	Yeni hayvan ekler
+GET	/v1/animals/{id}	ID’ye göre hayvan getirir
+GET	/v1/animals	Tüm hayvanları listeler
+GET	/v1/animals/name/{name}	Ada göre hayvan arar
+PUT	/v1/animals	Hayvan günceller
+DELETE	/v1/animals/{id}	Hayvan siler
 
-# PostgreSQL ayarlarını application.properties dosyasından yap
+👨‍⚕️ Doctor (Doktor)
+HTTP	Endpoint	Açıklama
+POST	/v1/doctors	Yeni doktor ekler
+GET	/v1/doctors/{id}	ID’ye göre doktor getirir
+GET	/v1/doctors?page=0&pageSize=10	Tüm doktorları sayfalı getirir
+PUT	/v1/doctors	Doktor günceller
+DELETE	/v1/doctors/{id}	Doktor siler
+
+💉 Vaccine (Aşı)
+HTTP	Endpoint	Açıklama
+POST	/v1/vaccines	Yeni aşı ekler
+GET	/v1/vaccines/{id}	ID’ye göre aşı getirir
+GET	/v1/vaccines?page=0&pageSize=10	Tüm aşıları listeler
+GET	/v1/vaccines/animal/{animalId}	Hayvan ID’sine göre aşıları getirir
+GET	/v1/vaccines/protection-dates?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD	Koruyuculuk tarihine göre filtreler
+PUT	/v1/vaccines	Aşı günceller
+DELETE	/v1/vaccines/{id}	Aşı siler
+
+📅 Available Date (Uygun Gün)
+HTTP	Endpoint	Açıklama
+POST	/v1/available_dates	Yeni uygun gün ekler
+GET	/v1/available_dates/{id}	ID’ye göre getirir
+GET	/v1/available_dates?page=0&pageSize=10	Tüm uygun günleri listeler
+PUT	/v1/available_dates	Güncelleme yapar
+DELETE	/v1/available_dates/{id}	Uygun günü siler
+
+📆 Appointments (Randevu)
+HTTP	Endpoint	Açıklama
+POST	/v1/appointments	Yeni randevu oluşturur
+GET	/v1/appointments/{id}	ID’ye göre randevu getirir
+GET	/v1/appointments?page=0&pageSize=10	Sayfalı randevu listesi
+GET	/v1/appointments/doctorId/{id}?startDateTime=...&endDateTime=...	Doktor ID ve tarih aralığına göre filtreler
+GET	/v1/appointments/getAnimalById/{id}?startDateTime=...&endDateTime=...	Hayvan ID ve tarih aralığına göre filtreler
+PUT	/v1/appointments	Randevuyu günceller
+DELETE	/v1/appointments/{id}	Randevuyu siler
 mvn clean install
 mvn spring-boot:run
 ```
