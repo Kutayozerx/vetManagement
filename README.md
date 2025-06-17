@@ -115,61 +115,64 @@ Tüm API istekleri klasör yapısında toplandı ve export edilerek proje klasö
 * `veterinary_system.sql` dosyası proje dizinindedir
 
 API ENDPOINT TABLOSU
-🧍‍♂️ Customer (Müşteri)
-HTTP	Endpoint	Açıklama
-POST	/v1/customers	Yeni müşteri ekler
-GET	/v1/customers/getById/{id}	ID’ye göre müşteri getirir
-GET	/v1/customers?page=0&pageSize=10	Tüm müşterileri sayfalı getirir
-GET	/v1/customers/getByName/{name}	Ada göre müşteri arar
-GET	/v1/customers/{id}/animals	Müşterinin sahip olduğu hayvanları listeler
-PUT	/v1/customers	Müşteri günceller
-DELETE	/v1/customers/{id}	Müşteri siler
+Customer
+| Yöntem | URL                                                     | Açıklama                                 |
+| ------ | ------------------------------------------------------- | ---------------------------------------- |
+| POST   | `http://localhost:8080/v1/customers`                    | Yeni müşteri ekler                       |
+| GET    | `http://localhost:8080/v1/customers/getById/5`          | Müşteriyi ID’ye göre getirir             |
+| GET    | `http://localhost:8080/v1/customers?page=0&pageSize=10` | Tüm müşterileri listeler                 |
+| GET    | `http://localhost:8080/v1/customers/getByName/berk`     | İsme göre filtreler                      |
+| GET    | `http://localhost:8080/v1/customers/4/animals`          | Belirli müşteriye ait hayvanları getirir |
+| PUT    | `http://localhost:8080/v1/customers`                    | Müşteri bilgisini günceller              |
+| DELETE | `http://localhost:8080/v1/customers/`                   | Müşteriyi siler                          |
 
-🐶 Animal (Hayvan)
-HTTP	Endpoint	Açıklama
-POST	/v1/animals	Yeni hayvan ekler
-GET	/v1/animals/{id}	ID’ye göre hayvan getirir
-GET	/v1/animals	Tüm hayvanları listeler
-GET	/v1/animals/name/{name}	Ada göre hayvan arar
-PUT	/v1/animals	Hayvan günceller
-DELETE	/v1/animals/{id}	Hayvan siler
+Animal
+| Yöntem | URL                                          | Açıklama                   |
+| ------ | -------------------------------------------- | -------------------------- |
+| POST   | `http://localhost:8080/v1/animals`           | Yeni hayvan ekler          |
+| GET    | `http://localhost:8080/v1/animals/9`         | Hayvanı ID’ye göre getirir |
+| GET    | `http://localhost:8080/v1/animals`           | Tüm hayvanları listeler    |
+| GET    | `http://localhost:8080/v1/animals/name/Odin` | İsme göre filtreler        |
+| PUT    | `http://localhost:8080/v1/animals`           | Hayvan bilgisini günceller |
+| DELETE | `http://localhost:8080/v1/animals/9`         | Hayvanı siler              |
 
-👨‍⚕️ Doctor (Doktor)
-HTTP	Endpoint	Açıklama
-POST	/v1/doctors	Yeni doktor ekler
-GET	/v1/doctors/{id}	ID’ye göre doktor getirir
-GET	/v1/doctors?page=0&pageSize=10	Tüm doktorları sayfalı getirir
-PUT	/v1/doctors	Doktor günceller
-DELETE	/v1/doctors/{id}	Doktor siler
+Doctor
+| Yöntem | URL                                                   | Açıklama                   |
+| ------ | ----------------------------------------------------- | -------------------------- |
+| POST   | `http://localhost:8080/v1/doctors`                    | Yeni doktor ekler          |
+| GET    | `http://localhost:8080/v1/doctors/`                   | Tüm doktorları listeler    |
+| GET    | `http://localhost:8080/v1/doctors?page=0&pageSize=10` | Sayfalı doktor listesi     |
+| PUT    | `http://localhost:8080/v1/doctors`                    | Doktor bilgisini günceller |
+| DELETE | `http://localhost:8080/v1/doctors/5`                  | Doktoru siler              |
 
-💉 Vaccine (Aşı)
-HTTP	Endpoint	Açıklama
-POST	/v1/vaccines	Yeni aşı ekler
-GET	/v1/vaccines/{id}	ID’ye göre aşı getirir
-GET	/v1/vaccines?page=0&pageSize=10	Tüm aşıları listeler
-GET	/v1/vaccines/animal/{animalId}	Hayvan ID’sine göre aşıları getirir
-GET	/v1/vaccines/protection-dates?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD	Koruyuculuk tarihine göre filtreler
-PUT	/v1/vaccines	Aşı günceller
-DELETE	/v1/vaccines/{id}	Aşı siler
+Vaccine
+| Yöntem | URL                                                                                            | Açıklama                             |
+| ------ | ---------------------------------------------------------------------------------------------- | ------------------------------------ |
+| POST   | `http://localhost:8080/v1/vaccines`                                                            | Yeni aşı ekler                       |
+| GET    | `http://localhost:8080/v1/vaccines/8`                                                          | Aşıyı ID’ye göre getirir             |
+| GET    | `http://localhost:8080/v1/vaccines?page=0&pageSize=10`                                         | Aşıları listeler                     |
+| GET    | `http://localhost:8080/v1/vaccines/animal/5`                                                   | Belirli hayvana ait aşıları listeler |
+| GET    | `http://localhost:8080/v1/vaccines/protection-dates?start_date=2022-01-01&end_date=2025-01-01` | Koruma tarihine göre filtreler       |
+| PUT    | `http://localhost:8080/v1/vaccines`                                                            | Aşıyı günceller                      |
+| DELETE | `http://localhost:8080/v1/vaccines/12`                                                         | Aşıyı siler                          |
 
-📅 Available Date (Uygun Gün)
-HTTP	Endpoint	Açıklama
-POST	/v1/available_dates	Yeni uygun gün ekler
-GET	/v1/available_dates/{id}	ID’ye göre getirir
-GET	/v1/available_dates?page=0&pageSize=10	Tüm uygun günleri listeler
-PUT	/v1/available_dates	Güncelleme yapar
-DELETE	/v1/available_dates/{id}	Uygun günü siler
+AvailableDate
+| Yöntem | URL                                                           | Açıklama                |
+| ------ | ------------------------------------------------------------- | ----------------------- |
+| POST   | `http://localhost:8080/v1/available_dates`                    | Yeni gün ekler          |
+| GET    | `http://localhost:8080/v1/available_dates/2`                  | Günü ID’ye göre getirir |
+| GET    | `http://localhost:8080/v1/available_dates?page=0&pageSize=10` | Sayfalı listeleme       |
+| PUT    | `http://localhost:8080/v1/available_dates`                    | Günü günceller          |
+| DELETE | `http://localhost:8080/v1/available_dates/4`                  | Günü siler              |
 
-📆 Appointments (Randevu)
-HTTP	Endpoint	Açıklama
-POST	/v1/appointments	Yeni randevu oluşturur
-GET	/v1/appointments/{id}	ID’ye göre randevu getirir
-GET	/v1/appointments?page=0&pageSize=10	Sayfalı randevu listesi
-GET	/v1/appointments/doctorId/{id}?startDateTime=...&endDateTime=...	Doktor ID ve tarih aralığına göre filtreler
-GET	/v1/appointments/getAnimalById/{id}?startDateTime=...&endDateTime=...	Hayvan ID ve tarih aralığına göre filtreler
-PUT	/v1/appointments	Randevuyu günceller
-DELETE	/v1/appointments/{id}	Randevuyu siler
-mvn clean install
-mvn spring-boot:run
-```
+Appointment
+| Yöntem | URL                                                                                                                       | Açıklama                                  |
+| ------ | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| POST   | `http://localhost:8080/v1/appointments`                                                                                   | Yeni randevu ekler                        |
+| GET    | `http://localhost:8080/v1/appointments/2`                                                                                 | Randevuyu ID’ye göre getirir              |
+| GET    | `http://localhost:8080/v1/appointments?page=0&pageSize=10`                                                                | Randevuları listeler                      |
+| GET    | `http://localhost:8080/v1/appointments/doctorId/1?startDateTime=2023-01-01T00:00:00&endDateTime=2025-01-01T23:59:59`      | Doktora ve tarih aralığına göre filtreler |
+| GET    | `http://localhost:8080/v1/appointments/getAnimalById/1?startDateTime=2023-01-01T00:00:00&endDateTime=2025-01-01T23:59:59` | Hayvana ve tarih aralığına göre filtreler |
+| PUT    | `http://localhost:8080/v1/appointments`                                                                                   | Randevuyu günceller                       |
+| DELETE | `http://localhost:8080/v1/appointments/3`                                                                                 | Randevuyu siler                           |
 
