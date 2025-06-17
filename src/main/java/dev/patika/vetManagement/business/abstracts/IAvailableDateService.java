@@ -8,7 +8,6 @@ import dev.patika.vetManagement.dto.response.CursorResponse;
 
 
 public interface IAvailableDateService {
-    //AvailableDate save(AvailableDate availableDate);
 
     ResultData<AvailableDateResponse> save(AvailableDateSaveRequest availableDateSaveRequest);
     ResultData<AvailableDateResponse> update(AvailableDateUpdateRequest availableDateUpdateRequest);

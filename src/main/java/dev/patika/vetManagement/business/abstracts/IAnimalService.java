@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface IAnimalService {
 
-    // Animal save(Animal animal);
     ResultData<AnimalResponse> update(AnimalUpdateRequest animalUpdateRequest);
     ResultData<AnimalResponse> get(int id);
     ResultData<CursorResponse<AnimalResponse>> cursor(int page, int pageSize);

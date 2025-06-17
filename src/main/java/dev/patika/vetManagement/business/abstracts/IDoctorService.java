@@ -11,7 +11,6 @@ public interface IDoctorService {
 
     ResultData<DoctorResponse> update(DoctorUpdateRequest doctorUpdateRequest);
 
-    // DoctorResponse get(int id);
     ResultData<DoctorResponse> get(int id);
 
     void delete(int id);

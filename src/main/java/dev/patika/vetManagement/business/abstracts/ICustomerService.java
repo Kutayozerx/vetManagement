@@ -12,7 +12,6 @@ import java.util.List;
 
 public interface ICustomerService {
 
-    // ResultData<Customer> save(Customer customer);
 
     ResultData<CustomerResponse> save (CustomerSaveRequest customerSaveRequest);
     ResultData<CustomerResponse> update(CustomerUpdateRequest customerUpdateRequest);

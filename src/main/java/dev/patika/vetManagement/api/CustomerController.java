@@ -30,7 +30,6 @@ public class CustomerController {
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public ResultData<CustomerResponse> save(@Valid @RequestBody CustomerSaveRequest customerSaveRequest){
-        // Customer saveCustomer = this.modelMapper.forRequest().map(customerSaveRequest, Customer.class);
         return customerService.save(customerSaveRequest);
 
     }
