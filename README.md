@@ -112,7 +112,7 @@ Tüm API istekleri klasör yapısında toplandı ve export edilerek proje klasö
 
 * PostgreSQL kullanılmıştır
 * Tablolar için en az 5 veri eklenmiştir
-* `veterinary_system.sql` dosyası proje dizinindedir
+* `vetManagement.sql` dosyası proje dizinindedir
 
 API ENDPOINT TABLOSU
 Customer
